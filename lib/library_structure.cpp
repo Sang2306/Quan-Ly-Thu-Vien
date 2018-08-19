@@ -192,9 +192,9 @@ int  remove(int x ,  NODEPTR &p)//xoa theo key cua node doc gia
 	
 		rp = p;
         if (rp->right == NULL)  p = rp->left;   
-		// p là nút lá hoac la nut chi co cay con ben trai
+		// p lÃ  nÃºt lÃ¡ hoac la nut chi co cay con ben trai
 		else if (rp->left == NULL)
-			p = rp->right;  // p là nut co cay con ben phai
+			p = rp->right;  // p lÃ  nut co cay con ben phai
 		else
 			remove_case_3 (rp->right);
 		delete rp;
@@ -230,7 +230,7 @@ void Inorder(NODEPTR p, Doc_Gia* docGia, int n)
 }
 //==================================
 bool CheckLeapYear(const int& year){
-	return (year%4==0 && year%100!=0 && year%400==0);
+	return (year%4==0 && (year%100!=0 || year%400==0));
 }
 
 int months[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
